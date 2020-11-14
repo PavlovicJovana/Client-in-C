@@ -22,6 +22,18 @@ int main() {
   int frequency = 100;   //for example
   double pick = 0.0;
   char output[9] = "";
+  char line[150] = "";
+  
+  //taking port from properties file
+  FILE *file;
+  if (file = fopen("Server-in-Java/config.properties", "r")) {
+    while(!feof(file)) {
+      fgets(line, 150, file);
+      memcpy(line, &line[7], 4);
+    }
+  } else
+    error("fopen() failed");
+  fclose(file);
 
   //create a socket
   int client;
