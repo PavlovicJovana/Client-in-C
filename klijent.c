@@ -26,7 +26,7 @@ int main() {
   
   //taking port from properties file
   FILE *file;
-  if (file = fopen("Server-in-Java/config.properties", "r")) {
+  if (file = fopen(":/Server-in-Java/config.properties", "r")) {
     while(!feof(file)) {
       fgets(line, 150, file);
       memcpy(line, &line[7], 4);
