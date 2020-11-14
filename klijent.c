@@ -31,8 +31,9 @@ int main() {
       fgets(line, 150, file);
       memcpy(line, &line[7], 4);
     }
-  } else
+  } else {
     error("fopen() failed");
+  }
   fclose(file);
 
   //create a socket
