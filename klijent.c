@@ -44,7 +44,7 @@ int main() {
   //specify an address for the socket
   struct sockaddr_in server_address;
   server_address.sin_family = AF_INET;
-  server_address.sin_port = htons(9004);
+  server_address.sin_port = htons(atoi(line));
   server_address.sin_addr.s_addr = INADDR_ANY;
 
   //check for error with the connection
