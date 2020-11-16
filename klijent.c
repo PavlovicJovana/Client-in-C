@@ -12,7 +12,7 @@ void error(char *msg) {
 }
 
 double uniform_distribution(double min, double max) {
-    double range = (max - min); 
+    double range = max - min; 
     double div = RAND_MAX / range;
     return min + rand() / div;
 }
@@ -39,7 +39,7 @@ int main() {
   //create a socket
   int client;
   if((client = socket(AF_INET, SOCK_STREAM, 0)) < 0)
-    error("socked() failed");
+    error("socket() failed");
 
   //specify an address for the socket
   struct sockaddr_in server_address;
